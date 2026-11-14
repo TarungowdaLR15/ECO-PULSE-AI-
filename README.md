@@ -29,12 +29,18 @@ An AI-assisted urban green infrastructure planning platform designed to combat u
 ## ✨ Key Features & Modules
 
 ### 1. 📊 Overview Dashboard
+<img width="1891" height="871" alt="Screenshot 2026-11-14 124131" src="https://github.com/user-attachments/assets/dce86949-6703-4cfb-a636-abce9a4aea73" />
+
 Get a high-level snapshot of the city's health. Includes Risk Distribution (Heat vs. Flood), Monthly Heat Index trends, Priority Neighbourhood rankings, and a live feed of recent planning activity.
 
-### 2. 🌡️ Climate Intelligence
+### 2. 🌡️ Climate Intelligence 
+<img width="1867" height="835" alt="Screenshot 2026-11-14 124210" src="https://github.com/user-attachments/assets/8d9d326a-6c9c-4fba-adb4-09c70836ec5a" />
+
 Deep dive into Urban Heat Island scores per neighbourhood. Features interactive bar charts highlighting high-risk zones (scores ≥ 70) and provides sortable tables of zone-specific heat risk details and main contributing factors.
 
 ### 3. 🗺️ Digital Twin Map
+<img width="1880" height="840" alt="Screenshot 2026-11-14 124238" src="https://github.com/user-attachments/assets/6a146f09-06c7-4093-a47c-dc55d7188124" />
+
 A fully interactive map (powered by Leaflet) visualizing spatial risks. Users can toggle layers for:
 *   Urban Heat Risk (High/Medium/Low)
 *   Flood / Runoff Risk
@@ -43,9 +49,13 @@ A fully interactive map (powered by Leaflet) visualizing spatial risks. Users ca
 *   Recommended Green Infrastructure
 
 ### 4. 📍 Ground Truth Reports
+<img width="1885" height="828" alt="Screenshot 2026-11-14 124547" src="https://github.com/user-attachments/assets/8a6149a8-0670-4b92-a75b-e539f9357f8a" />
+
 Community and field-officer driven intelligence. Browse real-time reports (e.g., "Severe monsoon ponding", "Zero shade corridor") complete with GPS coordinates, severity badges, and field-inspector recommended interventions. Features community endorsements.
 
 ### 5. 🧠 AI Recommendations
+<img width="1887" height="840" alt="Screenshot 2026-11-14 124605" src="https://github.com/user-attachments/assets/218df783-db83-4149-9574-11a7b67586d3" />
+
 The core intelligence engine. This module generates location-specific intervention packages (e.g., "Urban Ponds", "Urban Trees") ranked by an algorithmic MCDA (Multi-Criteria Decision Analysis) match score. Provides clear, data-backed justifications for each recommendation (e.g., "Critical runoff vulnerability demands accelerated bio-retention").
 
 ### 6. 💰 Budget Optimization
