@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080F0C;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #14532D;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #10B981;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-bg-secondary border border-emerald/10 rounded-xl shadow-glass backdrop-blur-sm;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-emerald/30 hover:shadow-glass-hover hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-emerald text-bg-primary font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 hover:bg-emerald-bright hover:shadow-emerald-glow active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply border border-emerald/30 text-emerald font-medium px-6 py-2.5 rounded-lg transition-all duration-200 hover:bg-emerald/10 hover:border-emerald/50 active:scale-95;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium text-text-secondary uppercase tracking-widest;
+  }
+
+  .risk-high {
+    @apply text-danger bg-danger/10 border border-danger/30;
+  }
+
+  .risk-medium {
+    @apply text-warning bg-warning/10 border border-warning/30;
+  }
+
+  .risk-low {
+    @apply text-emerald bg-emerald/10 border border-emerald/30;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-text-secondary transition-all duration-200 cursor-pointer hover:text-text-primary hover:bg-emerald/5;
+  }
+
+  .nav-item-active {
+    @apply nav-item text-emerald bg-emerald/10 border border-emerald/20;
+  }
+
+  .input-field {
+    @apply w-full bg-bg-primary border border-emerald/20 rounded-lg px-4 py-3 text-text-primary placeholder-text-secondary focus:outline-none focus:border-emerald/50 focus:ring-1 focus:ring-emerald/20 transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-text-primary;
+  }
+
+  .section-subtitle {
+    @apply text-sm text-text-secondary;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-mesh {
+    background-image: 
+      linear-gradient(rgba(16,185,129,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,185,129,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .ambient-glow {
+    position: relative;
+  }
+
+  .ambient-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(52,211,153,0.2), transparent, rgba(16,185,129,0.1));
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  background: #080F0C !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid rgba(16,185,129,0.2) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: #101B15 !important;
+  color: #34D399 !important;
+  border-color: rgba(16,185,129,0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(16,185,129,0.1) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #101B15 !important;
+  border: 1px solid rgba(16,185,129,0.2) !important;
+  color: #F0FDF4 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #101B15 !important;
+}
+
+/* Recharts overrides */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #101B15 !important;
+  border: 1px solid rgba(16,185,129,0.2) !important;
+  border-radius: 8px !important;
+  color: #F0FDF4 !important;
+}
+
+/* Animated gradient bg */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #080F0C, #101B15, #14532D22, #101B15);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #101B15 25%, #14532D22 50%, #101B15 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Demo badge */
+.demo-badge {
+  @apply inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-warning/10 text-warning border border-warning/20;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
